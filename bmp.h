@@ -31,3 +31,7 @@ typedef struct tagBITMAPINFOHEADER {
 
 
 void fillHeaders(FILE *file, int width, int height);
+void pixelByPixelMandelbrot(FILE *file, int width, int height,
+                    double minR, double maxR,
+                    double minI, double maxI,
+                    int maxIterations);

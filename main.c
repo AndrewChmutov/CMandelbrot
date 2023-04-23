@@ -22,12 +22,13 @@ int main(int argc, char **argv) {
     }
 
     int width = atoi(argv[1]), height = atoi(argv[2]);
-    int minR = -2, maxR = 1;
-    int minI = -1, maxI = 1;
+    double minR = -2, maxR = 1;
+    double minI = -1, maxI = 1;
 
     FILE *file = fopen(strcat(argv[3], "/fractal.bmp"), "wb");
 
     fillHeaders(file, width, height);
+    pixelByPixelMandelbrot(file, width, height, minR, maxR, minI, maxI, 10000);
 
     fclose(file);
     return 0;
