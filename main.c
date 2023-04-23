@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "safety_functions.h"
 #include "bmp.h"
 
@@ -16,16 +15,11 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    if (!pathExists(argv[3])) {
-        printf("No such path exists.\n");
-        return 0;
-    }
-
     int width = atoi(argv[1]), height = atoi(argv[2]);
     double minR = -2, maxR = 1;
     double minI = -1, maxI = 1;
 
-    FILE *file = fopen(strcat(argv[3], "/fractal.bmp"), "wb");
+    FILE *file = fopen(argv[3], "wb");
 
     fillHeaders(file, width, height);
     pixelByPixelMandelbrot(file, width, height, minR, maxR, minI, maxI, 10000);
