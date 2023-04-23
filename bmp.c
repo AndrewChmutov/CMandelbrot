@@ -13,13 +13,58 @@ void fillHeaders(FILE *file, int width, int height) {
     memcpy(buf, &temp, 4);
     fwrite(buf, 4, 1, file);
 
-    buf[0] = 0;
-    buf[1] = 0;
-    buf[2] = 0;
-    buf[3] = 0;
+    temp = 0;
     fwrite(buf, 4, 1, file);
 
     temp = 122;
     memcpy(buf, &temp, 4);
     fwrite(buf, 4, 1, file);
+
+
+
+    temp = 108;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+
+    temp = width;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+
+    temp = height;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+
+    temp = 1;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 2, 1, file);
+
+    temp = 24;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 2, 1, file);
+
+    temp = 0;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+
+    temp = width * height * 3;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+
+    temp = (int)(width * 39.3700787);
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+
+    temp = (int)(height * 39.3700787);
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+
+    temp = 0;
+    memcpy(buf, &temp, 4);
+    fwrite(buf, 4, 1, file);
+    fwrite(buf, 4, 1, file);
+
+    for (int i = 0; i < 17; i++)
+        fwrite(buf, 4, 1, file);
+
+    printf("%ld\n", ftell(file));
 }
