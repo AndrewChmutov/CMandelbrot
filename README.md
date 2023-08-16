@@ -1,7 +1,8 @@
 # Mandelbrot fractal
 
 ## Demonstration
-![](example.webm)
+[example.webm](https://github.com/AndrewChmutov/CMandelbrot/assets/67659210/edc8fb61-bba1-4897-9269-be1ae69a6f61)
+
 
 ### Image
 ![](example.bmp)
